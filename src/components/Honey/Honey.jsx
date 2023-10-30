@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import "./Honey.scss";
+import './Honey.scss';
 
 const Honey = ({ list }) => {
   return (
-    <ul className={`honeyList${list.length > 3 ? " typeColum" : ""}`}>
+    <ul className={`honeyList${list.length > 3 ? ' typeColum' : ''}`}>
       {list.map(({ img, honey }, index) => (
         <li key={index}>
           <div className="honeyBox">

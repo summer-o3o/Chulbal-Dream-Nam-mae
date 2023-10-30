@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import "./InfoSection.scss";
+import React, { useState } from 'react';
+import './InfoSection.scss';
 
 const InfoSection = ({ title, content }) => {
   const [toggle, setToggle] = useState(false);

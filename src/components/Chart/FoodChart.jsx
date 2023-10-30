@@ -23,8 +23,8 @@ const standards = {
   단백질: 55,
 };
 
-const convertData = (originalData) => {
-  return originalData.map((item) => ({
+const convertData = originalData => {
+  return originalData.map(item => ({
     nutrient: item.nutrient,
     value: ((item.value / standards[item.nutrient]) * 100).toFixed(2),
     percentage: 100,
