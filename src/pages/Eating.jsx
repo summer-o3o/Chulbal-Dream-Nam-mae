@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import NextBtn from 'components/NextBtn/NextBtn';
-import InforSection from 'components/InfoSection/InforSection';
+import InfoSection from 'components/InfoSection/InfoSection';
 import Loading from './Loading';
 import './Eating.scss';
 import Honey from 'components/Honey/Honey';
+import FoodChart from 'components/Chart/FoodChart';
 
 const Eating = () => {
   const [selectedFood, setSelectedFood] = useState(null);
@@ -20,15 +21,13 @@ const Eating = () => {
 
   if (!selectedFood) return <Loading />;
 
-  // console.log(selectedFood[0]?.list);
-
   return (
     <>
-      <div
-        className="wrapHeadBg"
-        style={{ backgroundImage: `url("img/prd.svg")` }}
-      />
       <div className="eating">
+        <div
+          className="wrapHeadBg"
+          style={{ backgroundImage: `url("img/prd.svg")` }}
+        />
         <div className="wrapInfo">
           <div className="eatingArea">
             <strong className="eatingTitle">떡볶이</strong>
@@ -38,13 +37,16 @@ const Eating = () => {
             256<span className="eatingKal">&#40;kal&#41;</span>
           </div>
         </div>
-        <InforSection
+        <InfoSection
           title={'영양 정보'}
           content={
             '튤립 내용튤립 내용튤립 내용튤립 내용튤립 내용튤립 내용튤립 내용'
           }
         />
-        <InforSection
+        <div style={{ width: '90%', height: '450px', margin: '0 auto' }}>
+          <FoodChart data={selectedFood[0]?.nutrients} />
+        </div>
+        <InfoSection
           title={'꿀맛 조합'}
           content={
             '튤립 내용튤립 내용튤립 내용튤립 내용튤립 내용튤립 내용튤립 내용'
